@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "../Home.css";
 
 const Home = () => {
@@ -18,7 +19,14 @@ const Home = () => {
       {data.map((item, index) => (
         <div className="card" key={index}>
           <a href={item.game_url} target="_blank">
-            <LazyLoadImage src={item.thumbnail} className="card-image" />
+            <LazyLoadImage
+              effect="blur"
+              src={item.thumbnail}
+              className="card-image"
+              height="100%"
+              width="100%"
+              alt={item.title}
+            />
           </a>
           <div className="card-info">
             <h4>{item.title}</h4>

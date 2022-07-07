@@ -5,8 +5,8 @@
 }
 
 body{
-  width:100vw;
+  width:100%;
   font-family: sans-serif;
   font-size:16px;
-  overflow-x: hidden;
+  background-color: #23272F;
 }

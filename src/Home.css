@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     gap:20px;
-    width:80%;
-    margin: 100px auto;
+    width:100%;
+    margin: 8rem auto;
     
     /* border-radius: 10px; */
 }
@@ -13,6 +13,7 @@
 .card{
     background-color: #30343f;
     color:white;
+    max-width:400px;
     /* border-radius: 10px; */
 }
 
@@ -23,8 +24,14 @@
 .card-info h4{
     /* text-align: center; */
     padding-bottom:20px;
-    font-weight: 700px;
+    font-weight: 600;
     font-size:1.2rem;
+    color:lightgray;
+}
+
+.card-info h4:hover{
+    color:white;
+    cursor: pointer;
 }
 
 .card-info .platform{
@@ -46,3 +53,4 @@
     display: flex;
     justify-content: space-between;
 }
+
