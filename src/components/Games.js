@@ -22,19 +22,19 @@ const Games = () => {
   useEffect(() => {
     fetch("https://still-retreat-02372.herokuapp.com/")
       .then((response) => response.json())
-      .then((response) => setData(response))
+      .then((response) => setData(response.slice(0, 70)))
       .catch((err) => console.error(err));
   }, []);
 
   return (
-    <>
-      <div className="search">
-        <input type="text" placeholder="Type title of the game" />
+    <div className="container">
+      <div id="search">
+        <input type="text" placeholder="Search by Title" />
         <button>
           <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
         </button>
       </div>
-      <div className="card-container">
+      <div className="card-container" id="collection">
         {data
           .slice(pagesVisited, pagesVisited + gamePerPage)
           .map((item, index) => (
@@ -70,7 +70,7 @@ const Games = () => {
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActive"}
       />
-    </>
+    </div>
   );
 };
 

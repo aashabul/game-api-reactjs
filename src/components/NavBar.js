@@ -27,13 +27,13 @@ const NavBar = () => {
     <div className="nav-container">
       <ul>
         <li>
-          <a href="#">Subscribe</a>
+          <a href="#collection">Collection</a>
         </li>
         <li>
           <a href="#">Wishlist</a>
         </li>
         <li>
-          <a href="#">Search</a>
+          <a href="#search">Search</a>
         </li>
       </ul>
     </div>
