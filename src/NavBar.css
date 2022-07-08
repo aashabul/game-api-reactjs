@@ -1,12 +1,12 @@
 .nav-container{
-    background-color: #faf9f9;
+    background-color: #202132;
     width:100%;
     height:80px;
     position:fixed;
     top:0;
     left:0;
     z-index: 9999;
-    border-bottom: 2px solid #ff595e;
+    /* border-bottom: 2px solid #ff595e; */
     transition: all 300ms ease-in-out;
 }
 
@@ -21,16 +21,18 @@
 }
 
 .nav-container ul li a{
-    color:black;
+    /* color:#FF333A; */
+    color:white;
     text-decoration: none;
-    font-size:1.3rem;
+    font-size:1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
 
 .nav-container ul li a:hover{
-    color:#ff595e;
+    /* color:black; */
+    color:#FF333A;
 }
 
 .scroll-up .nav-container{

@@ -8,7 +8,7 @@ import "../Home.css";
 const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/")
+    fetch("https://still-retreat-02372.herokuapp.com/")
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));

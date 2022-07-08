@@ -1,15 +1,15 @@
 import "./App.css";
+import Banner from "./components/Banner";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import video from "./assets/background-video.mp4";
+import initFirebase from "./firebase/firebase.init";
 
+initFirebase();
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <div>
-        <video src={video} autoPlay loop muted width="100%" height="100%" />
-      </div>
+      <Banner />
       <Home />
     </div>
   );
