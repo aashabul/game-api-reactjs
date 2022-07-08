@@ -1,6 +1,6 @@
 import "./App.css";
 import Banner from "./components/Banner";
-import Home from "./components/Home";
+import Games from "./components/Games";
 import NavBar from "./components/NavBar";
 import initFirebase from "./firebase/firebase.init";
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Banner />
-      <Home />
+      <Games />
     </div>
   );
 }

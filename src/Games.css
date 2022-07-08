@@ -1,0 +1,114 @@
+.search{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input{
+    padding:10px 15px;
+    width: 400px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.search button{
+    background-color: cornflowerblue ;
+    border: none;
+    padding:11px 15px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.search button:hover{
+    background-color: #ff595e;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    width:100%;
+    margin: 8rem auto 5rem auto;
+    min-height: 70vh;
+    
+    /* border-radius: 10px; */
+}
+
+.card{
+    background-color: #30343f;
+    color:white;
+    max-width:400px;
+    /* border-radius: 10px; */
+}
+
+.card-info{
+    padding:20px;
+}
+
+.card-info h4{
+    /* text-align: center; */
+    padding-bottom:20px;
+    font-weight: 600;
+    font-size:1.2rem;
+    color:lightgray;
+}
+
+.card-info h4:hover{
+    color:white;
+    cursor: pointer;
+}
+
+.card-info .platform{
+    background-color: #219ebc;
+}
+
+.card-info .genre{
+    background-color: #ff595e;
+    
+}
+.card-info .genre, .card-info .platform{
+    padding:5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+
+.card-tags{
+    display: flex;
+    justify-content: space-between;
+}
+
+.paginationButtons{
+    color:white;
+    width:100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationButtons a{
+    padding: 10px;
+    margin:8px;
+    border-radius: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.paginationButtons a:hover{
+    color:black;
+    background-color: white;
+}
+
+.paginationActive a{
+    color:black;
+    background-color: white;
+}
+
+.paginationButtons{
+    margin-bottom: 100px;
+}
