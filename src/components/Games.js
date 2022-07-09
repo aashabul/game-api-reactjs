@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "../Games.css";
 import ReactPaginate from "react-paginate";
@@ -11,31 +11,67 @@ import ReactPaginate from "react-paginate";
 const Games = () => {
   const [data, setData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
-
-  const gamePerPage = 8;
-  const pagesVisited = pageNumber * gamePerPage;
-  const pageCount = Math.ceil(data.length / gamePerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+  const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
     fetch("https://still-retreat-02372.herokuapp.com/")
       .then((response) => response.json())
-      .then((response) => setData(response.slice(0, 70)))
+      .then((response) => {
+        setData(response);
+      })
       .catch((err) => console.error(err));
   }, []);
+
+  const filteredItem = data.filter((item) =>
+    item.title.toLowerCase().includes(searchItem.toLowerCase())
+  );
+
+  const filteredItemLength = filteredItem.length;
+  console.log(filteredItemLength);
+
+  const gamePerPage = 8;
+  const pagesVisited = pageNumber * gamePerPage;
+
+  const pageCount = Math.ceil(
+    searchItem !== ""
+      ? filteredItemLength / gamePerPage
+      : data.length / gamePerPage
+  );
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <div className="container">
       <div id="search">
-        <input type="text" placeholder="Search by Title" />
+        <input
+          type="text"
+          placeholder="Search by Title"
+          onChange={(e) => {
+            setSearchItem(e.target.value);
+          }}
+        />
         <button>
           <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
         </button>
       </div>
+      {searchItem !== "" && (
+        <div className="search-count">
+          <span>Items Found: </span>
+          <span id="number">{filteredItemLength}</span>
+        </div>
+      )}
       <div className="card-container" id="collection">
         {data
+          .filter((item) => {
+            if (searchItem == "") {
+              return item;
+            } else if (
+              item.title.toLowerCase().includes(searchItem.toLowerCase())
+            ) {
+              return item;
+            }
+          })
           .slice(pagesVisited, pagesVisited + gamePerPage)
           .map((item, index) => (
             <div className="card" key={index}>
