@@ -27,7 +27,7 @@ const Games = () => {
   );
 
   const filteredItemLength = filteredItem.length;
-  console.log(filteredItemLength);
+  // console.log(filteredItemLength);
 
   const gamePerPage = 8;
   const pagesVisited = pageNumber * gamePerPage;
@@ -64,7 +64,7 @@ const Games = () => {
       <div className="card-container" id="collection">
         {data
           .filter((item) => {
-            if (searchItem == "") {
+            if (searchItem === "") {
               return item;
             } else if (
               item.title.toLowerCase().includes(searchItem.toLowerCase())
