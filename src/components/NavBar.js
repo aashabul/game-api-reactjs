@@ -29,17 +29,6 @@ const NavBar = () => {
       <ul>
         <li>
           <Link
-            to="collection"
-            spy={true}
-            smooth={true}
-            offset={-50}
-            duration={500}
-          >
-            Collection
-          </Link>
-        </li>
-        <li>
-          <Link
             to="poster"
             spy={true}
             smooth={true}
@@ -57,7 +46,19 @@ const NavBar = () => {
             offset={-50}
             duration={500}
           >
-            Search
+            Games
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="search"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            Community
           </Link>
         </li>
       </ul>
