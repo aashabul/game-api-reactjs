@@ -30,7 +30,7 @@ const NavBar = () => {
           <a href="#collection">Collection</a>
         </li>
         <li>
-          <a href="#">Wishlist</a>
+          <a href="#poster">Poster</a>
         </li>
         <li>
           <a href="#search">Search</a>
