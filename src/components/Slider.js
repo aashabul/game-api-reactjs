@@ -14,7 +14,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 export default function App() {
   return (
-    <div className="poster">
+    <div id="poster-div">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

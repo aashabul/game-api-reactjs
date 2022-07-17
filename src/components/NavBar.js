@@ -1,5 +1,6 @@
 import React from "react";
 import "../NavBar.css";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
   const body = document.body;
@@ -27,13 +28,37 @@ const NavBar = () => {
     <div className="nav-container">
       <ul>
         <li>
-          <a href="#collection">Collection</a>
+          <Link
+            to="collection"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            Collection
+          </Link>
         </li>
         <li>
-          <a href="#poster">Poster</a>
+          <Link
+            to="poster"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            Poster
+          </Link>
         </li>
         <li>
-          <a href="#search">Search</a>
+          <Link
+            to="search"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            Search
+          </Link>
         </li>
       </ul>
     </div>

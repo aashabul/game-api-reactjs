@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.nav-container ul li a{
+.nav-container ul li{
     /* color:#FF333A; */
     color:white;
     text-decoration: none;
@@ -28,9 +28,10 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    cursor: pointer;
 }
 
-.nav-container ul li a:hover{
+.nav-container ul li:hover{
     /* color:black; */
     color:#FF333A;
 }
