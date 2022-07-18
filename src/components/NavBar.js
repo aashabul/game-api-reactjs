@@ -1,6 +1,7 @@
 import React from "react";
 import "../NavBar.css";
-import { Link } from "react-scroll";
+import { Link as HashLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const body = document.body;
@@ -28,7 +29,7 @@ const NavBar = () => {
     <div className="nav-container">
       <ul>
         <li>
-          <Link
+          <HashLink
             to="poster"
             spy={true}
             smooth={true}
@@ -36,10 +37,10 @@ const NavBar = () => {
             duration={500}
           >
             Poster
-          </Link>
+          </HashLink>
         </li>
         <li>
-          <Link
+          <HashLink
             to="search"
             spy={true}
             smooth={true}
@@ -47,17 +48,11 @@ const NavBar = () => {
             duration={500}
           >
             Games
-          </Link>
+          </HashLink>
         </li>
 
         <li>
-          <Link
-            to="search"
-            spy={true}
-            smooth={true}
-            offset={-50}
-            duration={500}
-          >
+          <Link to="community" className="link">
             Community
           </Link>
         </li>
