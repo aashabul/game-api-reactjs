@@ -3,10 +3,8 @@ import "../ChatRoomHeader.css";
 import useAuth from "../hooks/useAuth";
 
 const ChatRoomHeader = () => {
-  const { handleSignOut, signInWithGoogle, user } = useAuth();
-  const handleGoogleSignIn = () => {
-    signInWithGoogle();
-  };
+  const { handleSignOut, user } = useAuth();
+
   return (
     <div className="chat-header">
       <div className="user">
@@ -21,12 +19,7 @@ const ChatRoomHeader = () => {
           />
         )}
       </div>
-      {user.email ? (
-        <button onClick={handleSignOut}>Logout</button>
-      ) : (
-        // <button onClick={handleGoogleSignIn}>Login</button>
-        <></>
-      )}
+      {user.email ? <button onClick={handleSignOut}>Logout</button> : <></>}
     </div>
   );
 };

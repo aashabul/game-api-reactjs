@@ -4,15 +4,17 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.init";
 
 const useFirebase = () => {
   const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(false);
   const googleProvider = new GoogleAuthProvider();
 
   //google signin
   const signInWithGoogle = () => {
+    setLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
@@ -20,6 +22,9 @@ const useFirebase = () => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -36,17 +41,19 @@ const useFirebase = () => {
 
   //set user state globally
   useEffect(() => {
+    setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       } else {
         setUser({});
       }
+      setLoading(false);
     });
     return () => unsubscribe;
   }, []);
 
-  return { signInWithGoogle, handleSignOut, user };
+  return { signInWithGoogle, handleSignOut, user, loading };
 };
 
 export default useFirebase;
