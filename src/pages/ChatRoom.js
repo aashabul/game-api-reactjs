@@ -14,6 +14,7 @@ import {
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
+import { auth } from "../firebase/firebase.init";
 
 const ChatRoom = () => {
   const { signInWithGoogle, user, loading } = useAuth();
@@ -53,7 +54,7 @@ const ChatRoom = () => {
         uid: user.uid,
         createdAt: serverTimestamp(),
       });
-      // setText("");
+      setText("");
     } catch (error) {
       console.log(error);
     }
@@ -70,9 +71,14 @@ const ChatRoom = () => {
       )}
       <div className="chat-container">
         <div id="inbox">
-          {messages.map(({ text }) => (
-            <div key={text} className="text">
-              <img src={user.photoURL} alt="" />
+          {messages.map(({ text, photo, createdAt, uid }) => (
+            <div
+              key={createdAt}
+              className={`text ${
+                uid === auth.currentUser?.uid ? "sent" : "received"
+              }`}
+            >
+              <img src={photo} alt="" />
               <p>{text}</p>
             </div>
           ))}
@@ -88,6 +94,7 @@ const ChatRoom = () => {
             />
             <button type="submit">send</button>
           </form>
+          <div></div>
         </div>
         <div id="groups">chat groups</div>
       </div>

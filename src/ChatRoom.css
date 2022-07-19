@@ -25,11 +25,19 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    /* box-shadow: 2px 2px 2px black; */
+    
 }
 
 #inbox img{
     width:50px;
     border-radius: 20px;
+}
+
+.sent{
+    
+   justify-content: flex-start;
+   flex-direction: row-reverse;
 }
 #groups{
     margin-left: 20px;
