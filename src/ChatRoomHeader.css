@@ -1,0 +1,33 @@
+.chat-header{
+    width:100%;
+    /* height:70px; */
+    height: 10vh;
+    background-color: #FF474E;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.chat-header .user img{
+    width:30px;
+}
+
+.chat-header .user{
+    display: flex;
+   gap: 10px;
+}
+
+.chat-header button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.chat-header button:hover{
+    color:black
+}
