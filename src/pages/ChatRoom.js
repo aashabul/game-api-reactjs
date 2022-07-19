@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../ChatRoom.css";
 import ChatRoomHeader from "../components/ChatRoomHeader";
+import useAuth from "../hooks/useAuth";
 
 const ChatRoom = () => {
-  const user = false;
+  const { signInWithGoogle, user } = useAuth();
+  const handleGoogleSignIn = () => {
+    signInWithGoogle();
+  };
   return (
     <div>
       <ChatRoomHeader />
-      {!user && (
+      {!user.email && (
         <div id="alert">
           <h2>Please Login to chat</h2>
-          <button>login</button>
+          <button onClick={handleGoogleSignIn}>login</button>
         </div>
       )}
       <div className="chat-container">

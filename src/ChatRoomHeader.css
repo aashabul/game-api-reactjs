@@ -15,7 +15,8 @@
 
 .chat-header .user{
     display: flex;
-   gap: 10px;
+    gap: 10px;
+    align-items: center;
 }
 
 .chat-header button{
@@ -30,4 +31,9 @@
 
 .chat-header button:hover{
     color:black
+}
+
+#google-photo{
+    border-radius: 20px;
+    width:40px;
 }

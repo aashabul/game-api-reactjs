@@ -29,11 +29,23 @@
     color: white;
     z-index: 100;
     align-items: center;
-    gap:10px;
+    gap:20px;
+}
+
+#alert h2{
+    font-size: 2rem;
 }
 
 #alert button{
     cursor: pointer;
-    padding:5px 15px;
-    font-size: 1.2rem;
+    padding:8px 20px;
+    font-size: 1.3rem;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#alert button:hover{
+    background-color: #FF474E;
+    color:white;
 }
