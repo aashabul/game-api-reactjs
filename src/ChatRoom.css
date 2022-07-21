@@ -23,10 +23,17 @@
     /* display: none; */
     background: #f1f1f1;
     box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width:5px;
 }
-.chat-container::-webkit-scrollbar-thumb{
+::-webkit-scrollbar {
+    /* display: none; */
+    background: #f1f1f1;
+    box-shadow: inset 0 0 5px grey;
+    /* border-radius: 10px; */
+    width:15px;
+}
+::-webkit-scrollbar-thumb{
     background-color: #979dac;
 }
 
@@ -44,10 +51,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-#inbox .text:last-child{
-    padding-bottom: 200px;
 }
 
 #inbox img{
@@ -85,7 +88,7 @@
     padding: 20px;
 }
 
-#alert{
+#alert-overlay{
     position:absolute;
     top:0;
     left: 0;
@@ -96,25 +99,36 @@
     flex-direction: column;
     justify-content: center;
     color: white;
-    z-index: 100;
+    z-index: 999;
     align-items: center;
-    gap:20px;
 }
 
-#alert h2{
+#alert-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d3557;
+    padding:80px;
+    gap:20px;
+    border-radius: 10px;
+    border: 1px solid #979dac;
+}
+
+#alert-overlay h2{
     font-size: 2rem;
 }
 
-#alert button{
+#alert-inner button{
     cursor: pointer;
-    padding:8px 20px;
+    padding:10px 30px;
     font-size: 1.3rem;
     background-color: white;
     border: none;
     border-radius: 5px;
 }
 
-#alert button:hover{
+#alert-overlay button:hover{
     background-color: #FF474E;
     color:white;
 }

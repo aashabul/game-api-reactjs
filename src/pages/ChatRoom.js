@@ -67,9 +67,11 @@ const ChatRoom = () => {
     <div>
       <ChatRoomHeader />
       {!user.email && !loading && (
-        <div id="alert">
-          <h2>Please Login to chat</h2>
-          <button onClick={handleGoogleSignIn}>Google SignIn</button>
+        <div id="alert-overlay">
+          <div id="alert-inner">
+            <h2>Please Login to Chat</h2>
+            <button onClick={handleGoogleSignIn}>Google SignIn</button>
+          </div>
         </div>
       )}
       <div className="chat-container">

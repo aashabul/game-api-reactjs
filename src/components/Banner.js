@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Link as HashLink } from "react-scroll";
 import "../Banner.css";
 
 const Banner = () => {
@@ -22,8 +24,19 @@ const Banner = () => {
           </blockquote>
         </div>
         <div id="banner-btn">
-          <button>Play Games</button>
-          <button>Chat Online</button>
+          <HashLink
+            to="search"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            <button>Play Games</button>
+          </HashLink>
+
+          <Link to="community">
+            <button>Chat Online</button>
+          </Link>
         </div>
       </div>
     </div>
