@@ -20,7 +20,7 @@
     position: absolute;
     top:45%;
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 700;
     z-index: 10;
     width: 100%;
@@ -28,4 +28,37 @@
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap:30px;
 }
+
+.banner-text blockquote #quote::before{
+   content:"'";
+   font-weight: 300;
+}
+.banner-text blockquote #quote::after{
+    content:"'";
+    font-weight: 300;
+ }
+
+ .banner-text button{
+    border:2px solid white;
+    background-color: transparent;
+    color:white;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;;
+ }
+ .banner-text button:hover{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+ }
+
+ #banner-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+ }

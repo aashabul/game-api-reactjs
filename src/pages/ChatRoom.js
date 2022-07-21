@@ -85,24 +85,25 @@ const ChatRoom = () => {
               <p>{text}</p>
             </div>
           ))}
-          <form onSubmit={sendText} autoComplete="off">
-            <div id="input-group">
-              <input
-                id="message-input"
-                type="text"
-                placeholder="Message..."
-                value={text}
-                onChange={(e) => {
-                  setText(e.target.value);
-                }}
-              />
-              <button id="send-btn" type="submit">
-                <FontAwesomeIcon icon={faPaperPlane} /> send
-              </button>
-            </div>
-          </form>
+          {user.email && (
+            <form onSubmit={sendText} autoComplete="off">
+              <div id="input-group">
+                <input
+                  id="message-input"
+                  type="text"
+                  placeholder="Message..."
+                  value={text}
+                  onChange={(e) => {
+                    setText(e.target.value);
+                  }}
+                />
+                <button id="send-btn" type="submit">
+                  <FontAwesomeIcon icon={faPaperPlane} /> send
+                </button>
+              </div>
+            </form>
+          )}
         </div>
-        {/* <div id="groups">chat groups</div> */}
       </div>
     </div>
   );
