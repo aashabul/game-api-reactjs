@@ -16,7 +16,7 @@ const ChatRoomHeader = () => {
           <img id="google-photo" src={user.photoURL} alt="profile" />
         ) : (
           <img
-            src="https://cdn-icons-png.flaticon.com/512/64/64572.png"
+            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
             alt="profile"
           />
         )}
