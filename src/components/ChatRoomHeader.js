@@ -1,6 +1,8 @@
 import React from "react";
 import "../ChatRoomHeader.css";
 import useAuth from "../hooks/useAuth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const ChatRoomHeader = () => {
   const { handleSignOut, user } = useAuth();
@@ -19,7 +21,13 @@ const ChatRoomHeader = () => {
           />
         )}
       </div>
-      {user.email ? <button onClick={handleSignOut}>Logout</button> : <></>}
+      {user.email ? (
+        <button onClick={handleSignOut}>
+          <FontAwesomeIcon icon={faRightFromBracket} /> Logout
+        </button>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

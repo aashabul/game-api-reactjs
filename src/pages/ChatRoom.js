@@ -7,7 +7,6 @@ import {
   collection,
   onSnapshot,
   query,
-  where,
   orderBy,
   limit,
   doc,
@@ -15,6 +14,8 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { auth } from "../firebase/firebase.init";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 const ChatRoom = () => {
   const { signInWithGoogle, user, loading } = useAuth();
@@ -27,11 +28,9 @@ const ChatRoom = () => {
       orderBy("createdAt"),
       limit(50)
     );
-    // const messageRef = query(q, orderBy("createdAt"), limit(50));
+
     const messageSubscription = onSnapshot(q, (querySnapshot) => {
       const list = [];
-      // setMessages(querySnapshot.docs.map((doc) => doc.data()));
-      // setMessages(list);
       querySnapshot.forEach((doc) => {
         list.push(doc.data());
       });
@@ -48,13 +47,17 @@ const ChatRoom = () => {
   const sendText = async (e) => {
     e.preventDefault();
     try {
-      const docRef = await addDoc(collection(db, "messages"), {
-        text: text,
-        photo: user.photoURL,
-        uid: user.uid,
-        createdAt: serverTimestamp(),
-      });
-      setText("");
+      if (text !== "") {
+        const docRef = await addDoc(collection(db, "messages"), {
+          text: text,
+          photo: user.photoURL,
+          uid: user.uid,
+          createdAt: serverTimestamp(),
+        });
+        setText("");
+      } else {
+        console.log("can't send empty message");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -82,21 +85,24 @@ const ChatRoom = () => {
               <p>{text}</p>
             </div>
           ))}
-          <form onSubmit={sendText}>
-            <input
-              type="text"
-              placeholder="Message..."
-              value={text}
-              onChange={(e) => {
-                setText(e.target.value);
-                console.log(text);
-              }}
-            />
-            <button type="submit">send</button>
+          <form onSubmit={sendText} autoComplete="off">
+            <div id="input-group">
+              <input
+                id="message-input"
+                type="text"
+                placeholder="Message..."
+                value={text}
+                onChange={(e) => {
+                  setText(e.target.value);
+                }}
+              />
+              <button id="send-btn" type="submit">
+                <FontAwesomeIcon icon={faPaperPlane} /> send
+              </button>
+            </div>
           </form>
-          <div></div>
         </div>
-        <div id="groups">chat groups</div>
+        {/* <div id="groups">chat groups</div> */}
       </div>
     </div>
   );
