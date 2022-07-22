@@ -5,7 +5,8 @@
 }
 
 #poster-div{
-  height: 100vh;
+  /* height: 100vh; */
+  margin:50px auto 150px auto;;
   display: flex;
   align-items: center;
   justify-content: center;

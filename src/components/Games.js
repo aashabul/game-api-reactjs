@@ -46,14 +46,14 @@ const Games = () => {
       <div id="search">
         <input
           type="text"
-          placeholder="Search by Title"
+          placeholder="Search by Title..."
           onChange={(e) => {
             setSearchItem(e.target.value);
           }}
         />
-        <button>
+        {/* <button>
           <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
-        </button>
+        </button> */}
       </div>
       {searchItem !== "" && (
         <div className="search-count">

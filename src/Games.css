@@ -13,12 +13,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #search input{
     padding:10px 15px;
-    width: 400px;
-    border-radius: 10px 0 0 10px;
+    width: 500px;
+    border-radius: 10px ;
     border: none;
     font-size: 1.2rem;
 }
@@ -27,13 +28,13 @@
     outline: none;
 }
 
-#search button{
+/* #search button{
     background-color: cornflowerblue ;
     border: none;
     padding:11px 15px;
     border-radius: 0 10px 10px 0;
     cursor: pointer;
-}
+} */
 
 .search-count{
     color:white;
@@ -132,9 +133,9 @@
     color:black;
     background-color: white;
 }
-@media only screen and (max-width:400px){
+@media only screen and (max-width:600px){
     #search input{
-        width:200px;
+        width:90%;
         font-size: 1rem;
     }
     #search button{

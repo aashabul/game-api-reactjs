@@ -18,11 +18,16 @@ const ChatRoomHeader = () => {
             alt="profile"
           />
         )}
-        {user.email ? <h2>{user.displayName}</h2> : <h2>CHAT ROOM</h2>}
+        {user.email ? (
+          <h2 id="username">{user.displayName}</h2>
+        ) : (
+          <h2>CHAT ROOM</h2>
+        )}
       </div>
       {user.email ? (
         <button onClick={handleSignOut}>
-          <FontAwesomeIcon icon={faRightFromBracket} /> Logout
+          <FontAwesomeIcon icon={faRightFromBracket} />
+          <span id="logout-text"> Logout</span>
         </button>
       ) : (
         <></>

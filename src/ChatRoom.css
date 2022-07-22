@@ -83,10 +83,10 @@
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
-#groups{
+/* #groups{
     margin-left: 20px;
     padding: 20px;
-}
+} */
 
 #alert-overlay{
     position:absolute;
@@ -163,4 +163,61 @@ form #send-btn{
     background-color: #30bced;
     display: flex;
     gap:5px;
+}
+
+@media only screen and (max-width:600px){
+    #alert-overlay h2{
+        font-size: 1.5rem;
+    }
+    #alert-inner{
+        padding:30px 10px;
+        gap:20px;
+    }
+    .chat-container{
+        width:100%;
+        overflow: hidden;
+        border: none;
+        padding:0 12px;
+        overflow-y: scroll;
+    }
+    #inbox{
+        padding: 35px 0 60px 0;
+    }
+    #inbox p{
+        font-size: 1rem; 
+    }
+    #inbox img{
+        width:30px;
+    }
+    .sent p{
+        max-width:210px
+     }
+     .received p{
+        max-width: 180px;
+     }
+     #input-group{
+        width:100%;
+        background-color: #293241;
+        padding:10px;
+    }
+    form #message-input{
+        padding:5px;
+        width:100%;
+        font-size: 1rem;
+        border:none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    form #send-btn{
+        padding:10px 5px;
+        font-size: 1rem;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+@media only screen and (min-width:600px){
+    .chat-container{
+        min-width: 600px;
+    }
 }

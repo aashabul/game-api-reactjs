@@ -28,6 +28,7 @@
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     gap:30px;
 }
@@ -62,3 +63,19 @@
     align-items: center;
     gap:20px;
  }
+
+ @media only screen and (max-width:400px){
+    .banner-text{
+        top:35%;
+        font-size: 1.5rem;
+        gap:50px;
+    }
+    #banner-btn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
+     }
+    
+}
