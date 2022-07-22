@@ -7,27 +7,57 @@ const NavBar = () => {
   const body = document.body;
   let lastScroll = 0;
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll <= 0) {
-      body.classList.remove("scroll-up");
-    }
+  if (document.body.clientWidth > 450) {
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll <= 0) {
+        body.classList.remove("scroll-up");
+      }
 
-    if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
-      body.classList.remove("scroll-up");
-      body.classList.add("scroll-down");
-    }
+      if (
+        currentScroll > lastScroll &&
+        !body.classList.contains("scroll-down")
+      ) {
+        body.classList.remove("scroll-up");
+        body.classList.add("scroll-down");
+      }
 
-    if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
-      body.classList.remove("scroll-down");
-      body.classList.add("scroll-up");
-    }
+      if (
+        currentScroll < lastScroll &&
+        body.classList.contains("scroll-down")
+      ) {
+        body.classList.remove("scroll-down");
+        body.classList.add("scroll-up");
+      }
 
-    lastScroll = currentScroll;
-  });
+      lastScroll = currentScroll;
+    });
+  }
+
+  const menuSlide = () => {
+    const burger = document.querySelector("#burger-menu");
+    const nav = document.querySelector(".nav-links");
+    const banner = document.querySelector(".banner");
+    const links = document.querySelectorAll("nav-links li");
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("burger-menu-active");
+    });
+
+    banner.addEventListener("click", () => {
+      nav.classList.remove("burger-menu-active");
+    });
+  };
+
   return (
     <div className="nav-container">
-      <ul>
+      <h1 id="nav-logo">Game World</h1>
+      <div id="burger-menu" onClick={menuSlide}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul className="nav-links">
         <li>
           <HashLink
             to="poster"
