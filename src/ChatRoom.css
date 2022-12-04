@@ -28,7 +28,7 @@
     width:15px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #979dac;
+    background-color: #343A40;
 }
 
 .chat-container::-webkit-scrollbar-track{

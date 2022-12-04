@@ -14,7 +14,7 @@ const Games = () => {
   const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
-    fetch("https://still-retreat-02372.herokuapp.com/")
+    fetch("https://game-api-server-production.up.railway.app/")
       .then((response) => response.json())
       .then((response) => {
         setData(response);
